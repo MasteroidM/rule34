@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bru7hp551ubkt"]
+
+[ext_resource type="PackedScene" uid="uid://cqrnmucc5vmgp" path="res://models/lightsaber/hexagonal_lightsaber.glb" id="1_5do27"]
+
+[node name="red_saber" type="Node3D"]
+
+[node name="hexagonal_lightsaber" parent="." instance=ExtResource("1_5do27")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.589932, 0)
+light_color = Color(1, 0.02, 0.02, 1)
