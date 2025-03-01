@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://u6n6lw6j5gtv"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addon/proto_controller/proto_controller.tscn" id="1_lvoha"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ProtoController" parent="." instance=ExtResource("1_lvoha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.596772, 1.41496, 0.192203)
+input_left = "left"
+input_right = "right"
+input_forward = "forward"
+input_back = "back"
+input_jump = "jump"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(35.6683, 0, 0, 0, 1, 0, 0, 0, 43.2424, -0.5, -0.5, -0.5)
+use_collision = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.886712, 0.462321, 0, -0.462321, 0.886712, 1.76501, 7.48388, 6.80296)
+light_energy = 16.0
+spot_range = 33.177
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.380823, 0.638678, -4.15915)
