@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://u6n6lw6j5gtv"]
+[gd_scene load_steps=5 format=3 uid="uid://u6n6lw6j5gtv"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addon/proto_controller/proto_controller.tscn" id="1_lvoha"]
 [ext_resource type="Script" path="res://main.gd" id="1_thf6i"]
 [ext_resource type="PackedScene" uid="uid://kdj0yajag0q6" path="res://models/box/box.tscn" id="3_6s3fv"]
+[ext_resource type="PackedScene" uid="uid://bmmixn1odj3hv" path="res://models/cuttableBox/cuttableBox.tscn" id="4_sfmwo"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_thf6i")
@@ -26,3 +27,6 @@ spot_range = 33.177
 
 [node name="box" parent="." instance=ExtResource("3_6s3fv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32714, 3.66226, -4.59461)
+
+[node name="Node3D" parent="." instance=ExtResource("4_sfmwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.39254, 1.04365, 6.84518)
