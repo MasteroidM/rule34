@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bru7hp551ubkt" path="res://models/lightsaber/red_saber.tscn" id="8_x17ic"]
 [ext_resource type="PackedScene" uid="uid://bcfo1daicbihg" path="res://models/lightsaber/blue_saber.tscn" id="9_ht67v"]
 
-[node name="Node3D" type="Node3D"]
+[node name="main" type="Node3D"]
 script = ExtResource("1_thf6i")
 
 [node name="ProtoController" parent="." instance=ExtResource("1_lvoha")]
@@ -22,8 +22,9 @@ input_back = "back"
 input_jump = "jump"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(35.6683, 0, 0, 0, 1, 0, 0, 0, 43.2424, -0.5, -0.5, -0.5)
+transform = Transform3D(35.6683, 0, 0, 0, 1, 0, 0, 0, 43.2424, -0.5, -0.5, -5.33521)
 use_collision = true
+size = Vector3(1, 1, 0.543945)
 
 [node name="Spawner" type="Node3D" parent="."]
 script = ExtResource("7_yo456")
@@ -39,3 +40,6 @@ transform = Transform3D(1, 0, 0, 0, 0.199128, 0.979973, 0, -0.979973, 0.199128, 
 
 [node name="blue_saber" parent="." instance=ExtResource("9_ht67v")]
 transform = Transform3D(1, 0, 0, 0, 0.110671, -0.993857, 0, 0.993857, 0.110671, 9, 2, -4)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+autoplay = true
