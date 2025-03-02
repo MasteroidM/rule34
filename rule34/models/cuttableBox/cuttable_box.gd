@@ -14,6 +14,6 @@ func _process(delta):
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	print(area.name)
-	if area.name == "red_sabers":
+	if area.name == "blue_sabers":
 		queue_free()
 	pass # Replace with function body.

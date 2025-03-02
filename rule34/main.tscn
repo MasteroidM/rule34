@@ -1,11 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://u6n6lw6j5gtv"]
+[gd_scene load_steps=8 format=3 uid="uid://u6n6lw6j5gtv"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addon/proto_controller/proto_controller.tscn" id="1_lvoha"]
 [ext_resource type="Script" path="res://main.gd" id="1_thf6i"]
-[ext_resource type="PackedScene" uid="uid://kdj0yajag0q6" path="res://models/box/box.tscn" id="3_6s3fv"]
 [ext_resource type="PackedScene" uid="uid://bmmixn1odj3hv" path="res://models/cuttableBox/cuttableBox.tscn" id="4_sfmwo"]
 [ext_resource type="PackedScene" uid="uid://nenhwnfd3ers" path="res://models/cuttableBox/cuttableBoxRed.tscn" id="5_avaod"]
-[ext_resource type="PackedScene" uid="uid://cg6xq2dokakcp" path="res://models/lightsaber/hexagonal_lightsaber_pt._2.glb" id="6_q8cfq"]
 [ext_resource type="Script" path="res://spawner.gd" id="7_yo456"]
 [ext_resource type="PackedScene" uid="uid://bru7hp551ubkt" path="res://models/lightsaber/red_saber.tscn" id="8_x17ic"]
 [ext_resource type="PackedScene" uid="uid://bcfo1daicbihg" path="res://models/lightsaber/blue_saber.tscn" id="9_ht67v"]
@@ -14,7 +12,7 @@
 script = ExtResource("1_thf6i")
 
 [node name="ProtoController" parent="." instance=ExtResource("1_lvoha")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9, 1, -4.5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.077, 1, -4.5)
 up_direction = Vector3(0.999925, 0.00544403, -0.0109992)
 can_move = false
 input_left = "left"
@@ -27,34 +25,17 @@ input_jump = "jump"
 transform = Transform3D(35.6683, 0, 0, 0, 1, 0, 0, 0, 43.2424, -0.5, -0.5, -0.5)
 use_collision = true
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.886712, 0.462321, 0, -0.462321, 0.886712, 1.76501, 7.48388, 6.80296)
-visible = false
-light_energy = 16.0
-spot_range = 33.177
-
-[node name="box" parent="." instance=ExtResource("3_6s3fv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32714, 3.66226, -4.59461)
-
-[node name="Node3D" parent="." instance=ExtResource("4_sfmwo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.39254, 1.04365, 6.84518)
-
-[node name="Node3D2" parent="." instance=ExtResource("5_avaod")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.78166, 3.42749, 8.51442)
-
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("6_q8cfq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31402, 0, 8.8674)
-
 [node name="Spawner" type="Node3D" parent="."]
 script = ExtResource("7_yo456")
 box_scene_red = ExtResource("5_avaod")
+box_scene_blue = ExtResource("4_sfmwo")
 
 [node name="Timer" type="Timer" parent="Spawner"]
 wait_time = 2.0
 autostart = true
 
 [node name="red_saber" parent="." instance=ExtResource("8_x17ic")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2, -5)
+transform = Transform3D(1, 0, 0, 0, 0.199128, 0.979973, 0, -0.979973, 0.199128, 9, 2, -4.83343)
 
-[node name="Node3D3" parent="." instance=ExtResource("9_ht67v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2, -4)
+[node name="blue_saber" parent="." instance=ExtResource("9_ht67v")]
+transform = Transform3D(1, 0, 0, 0, 0.110671, -0.993857, 0, 0.993857, 0.110671, 9, 2, -4)

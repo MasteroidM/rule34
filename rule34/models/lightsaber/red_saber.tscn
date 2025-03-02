@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bru7hp551ubkt"]
+[gd_scene load_steps=3 format=3 uid="uid://bru7hp551ubkt"]
 
 [ext_resource type="PackedScene" uid="uid://cqrnmucc5vmgp" path="res://models/lightsaber/hexagonal_lightsaber.glb" id="1_5do27"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d4eqt"]
 
 [node name="red_saber" type="Node3D"]
 
@@ -9,3 +11,11 @@
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.589932, 0)
 light_color = Color(1, 0.02, 0.02, 1)
+
+[node name="red_sabers" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="red_sabers"]
+transform = Transform3D(0.641552, 0, 0, 0, 2.11345, 0, 0, 0, 0.637546, 0, 1.43203, 0)
+shape = SubResource("BoxShape3D_d4eqt")

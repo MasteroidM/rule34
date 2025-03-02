@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmmixn1odj3hv"]
+[gd_scene load_steps=4 format=3 uid="uid://bmmixn1odj3hv"]
 
 [ext_resource type="PackedScene" uid="uid://53gne3iwqyif" path="res://models/cuttableBox/cube.glb" id="1_1a6xq"]
+[ext_resource type="Script" path="res://models/cuttableBox/cuttable_box.gd" id="1_a1ugq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ake64"]
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_a1ugq")
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_ake64")
@@ -18,3 +22,5 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43947, 0.420269, 0)
 light_color = Color(0, 1, 0.916667, 1)
 light_energy = 3.122
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

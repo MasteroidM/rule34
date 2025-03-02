@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf6b5s4chcpp4"]
+
+[ext_resource type="Script" path="res://temp.gd" id="1_knl5v"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8vj3m"]
+
+[node name="Temp" type="Node3D"]
+script = ExtResource("1_knl5v")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+mesh = SubResource("BoxMesh_8vj3m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.295558, 0.955325, 0, -0.955325, -0.295558, 0, 4.5, 0)
+light_energy = 5.735
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.997638, 0.00457707, 0.068541, -0.047755, 0.763441, 0.644109, -0.0493789, -0.645861, 0.761857, 0.451347, 5.24774, 7.23948)
